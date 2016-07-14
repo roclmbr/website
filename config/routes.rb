@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :articles
   root 'home#index'
-
+  get 'pages/rock', to: 'pages#rock' 
+  get 'pages/ice', to: 'pages#ice' 
+  get 'pages/offroading', to: 'pages#offroading'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
