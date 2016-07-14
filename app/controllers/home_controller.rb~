@@ -1,0 +1,6 @@
+class HoeController < ApplicationController
+        
+  def index
+  end
+ 
+end
