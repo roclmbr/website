@@ -1,8 +1,10 @@
-
-<h2>Welcome Steve Adamson's home on the internet</h2>
-
-<p class="lead">
-
-If you are interested in accessing some of the restricted sections of this site then please sign up.
-
-</p>
+<% if current_user %>
+    <h3>Welcome <%= current_user.username %></h3>
+<% else %>
+    <div class="jumbotron">
+    <h2>Welcome Steve Adamson's home on the internet</h2>
+        <p>
+            If you are interested in accessing some of the restricted sections of this site then please sign up.
+        </p>
+    </div>
+<% end %>
