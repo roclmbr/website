@@ -8,4 +8,7 @@ class PagesController < ApplicationController
     
     def offroading
     end
+    
+    def mountains
+    end
 end
