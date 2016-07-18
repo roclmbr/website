@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   resources :images
   resources :users, except: [:new]  
   resources :articles
   resources :categories, except: [:destroy]
   resources :resumes, only: [:index, :new, :create, :destroy]
+  resources :evaluations, only: [:index, :new, :create, :destroy]
     
   root 'home#index'
     

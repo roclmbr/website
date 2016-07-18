@@ -3,7 +3,7 @@ class Image < ActiveRecord::Base
     mount_uploader :picture, PictureUploader
     
     validate :picture_size
-
+    
     private
 
     def picture_size
