@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :categories, except: [:destroy]
   resources :resumes, only: [:index, :new, :create, :destroy]
-  resources :evaluations, only: [:index, :new, :create, :destroy]
+  resources :evaluations, only: [:index, :new, :create, :destroy, :edit]
     
   root 'home#index'
     
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'pages/offroading', to: 'pages#offroading'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
- 
+   
   post 'login', to: 'sessions#create'
 
   delete 'logout', to: 'sessions#destroy'

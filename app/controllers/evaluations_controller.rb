@@ -6,6 +6,10 @@ def index
    def new
       @evaluation = Evaluation.new
    end
+    
+    def edit
+        @evaluation = Evaluation.find(params[:id])
+    end
    
    def create
       @evaluation = Evaluation.new(evaluation_params)
