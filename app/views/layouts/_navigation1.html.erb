@@ -55,12 +55,20 @@
                     <% if logged_in? %>
                         <li><%= link_to 'Log out', logout_path, method: :delete %></li>
                         <li class="dropdown">
+<<<<<<< HEAD
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile:
                                 <% if current_user.admin? %>
                                     <%= "Admin" %>
                                 <% else %>
                                     <%= "User" %>
                                 <% end %>
+=======
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile:   <% if current_user.admin? %>
+                                            <%= "Admin" %>
+                                       <% else %>
+                                            <%= "User" %>
+                                        <% end %>
+>>>>>>> 4908123e43f7bd9618155537951cf75a45384db2
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
