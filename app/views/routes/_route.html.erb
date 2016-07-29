@@ -1,0 +1,27 @@
+<% obj.sort_by(&:name).each do |route| %>
+
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="well well-lg">
+            <div class="route-title">
+                <%= link_to route.name, route_path(route) %>
+            </div>
+            <div class="route-body">
+                <%= truncate(route.description, length: 100) %>
+            </div>
+            <% if route.cliffs.any? %>
+                <p>Cliff: <%= render route.cliffs %></p>
+            <% end %>
+            <% if logged_in? && current_user.admin? %>
+                <div class="route-actions">
+                    <%= link_to "Edit this route", edit_route_path(route), class: "btn btn-xs btn-primary" %>
+                    <%= link_to "Delete this route", route_path(route), method: :delete,
+                    data: { confirm: "Are you sure you want to delete the route?"},
+                    class: "btn btn-xs btn-danger" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<% end %>

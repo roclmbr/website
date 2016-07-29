@@ -1,0 +1,53 @@
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "New Route", new_route_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+         <th>Location</th>
+          <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+       
+       <% @routes.sort_by(&:name).each do |route| %>
+         
+         <tr>
+             <td><%= link_to route.name, route_path(route) %></td>
+             <td><%= route.description %></td>
+             <td>
+             <% if route.cliffs.any? %>
+                <%= render route.cliffs %>
+             <% end %>
+                 </td>
+             <td>
+             <div class="route-actions">
+            <% if logged_in? && current_user.admin? %>
+                
+                <%= link_to "Delete this route", route_path(route), method: :delete,
+                data: { confirm: "Are you sure you want to delete the route?"},
+                class: "btn btn-xs btn-danger" %>
+            <% end %>
+                 <%= link_to "Edit this route", edit_route_path(route), class: "btn btn-xs btn-primary" %>
+            
+            </div></td>
+         </tr>
+         
+      <% end %>
+       
+   </tbody>
+   
+</table>
+<%= will_paginate %>

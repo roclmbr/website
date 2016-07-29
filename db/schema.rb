@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727182535) do
+ActiveRecord::Schema.define(version: 20160729001451) do
 
   create_table "article_categories", force: :cascade do |t|
     t.integer "article_id"
@@ -32,11 +32,29 @@ ActiveRecord::Schema.define(version: 20160727182535) do
     t.datetime "updated_at"
   end
 
+  create_table "cliffs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "evaluations", force: :cascade do |t|
     t.string   "name"
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "guidebooks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "grade"
+    t.string   "fa"
+    t.string   "date"
+    t.integer  "length"
+    t.string   "gear"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "images", force: :cascade do |t|
@@ -65,6 +83,21 @@ ActiveRecord::Schema.define(version: 20160727182535) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "route_cliffs", force: :cascade do |t|
+    t.integer "route_id"
+    t.integer "cliff_id"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.string  "grade"
+    t.string  "fa"
+    t.string  "date"
+    t.integer "length"
+    t.string  "gear"
   end
 
   create_table "users", force: :cascade do |t|

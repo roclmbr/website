@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :resumes, only: [:index, :new, :create, :destroy]
   resources :evaluations, only: [:index, :new, :create, :destroy, :edit]
   resources :receipts, only: [:index, :new, :create, :destroy, :edit]
+  resources :guidebooks, only: [:index, :new, :create, :destroy, :edit]
+  resources :cliffs, except: [:destroy]
+  resources :routes  
     
   root 'home#index'
     

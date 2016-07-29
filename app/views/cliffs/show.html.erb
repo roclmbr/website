@@ -1,0 +1,10 @@
+<h1 align="center"><%= "Cliff: " + @cliff.name %></h1>
+    <div align="center">
+       <%= will_paginate @cliff_routes %>
+    </div>
+
+<%= render 'routes/route', obj: @cliff_routes %>
+
+    <div align="center">
+        <%= will_paginate @cliff_routes %>
+    </div>
