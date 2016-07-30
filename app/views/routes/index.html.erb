@@ -26,7 +26,7 @@
          
          <tr>
              <td><%= link_to route.name, route_path(route) %></td>
-             <td><%= route.description %></td>
+             <td><%= truncate(route.description, :length => 100) %></td>
              <td>
              <% if route.cliffs.any? %>
                 <%= render route.cliffs %>
