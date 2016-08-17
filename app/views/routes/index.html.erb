@@ -40,8 +40,9 @@
                 data: { confirm: "Are you sure you want to delete the route?"},
                 class: "btn btn-xs btn-danger" %>
             <% end %>
+            <% if logged_in? %>
                  <%= link_to "Edit this route", edit_route_path(route), class: "btn btn-xs btn-primary" %>
-            
+            <% end %>
             </div></td>
          </tr>
          
