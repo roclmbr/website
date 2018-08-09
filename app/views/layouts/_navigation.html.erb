@@ -17,7 +17,9 @@
                 <li><%= link_to "Articles", articles_path  %></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NB Guidebook <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <% if logged_in? and current_user.admin? %>
                         <li><%= link_to "New Route", new_route_path %></li>
+                        <% end %>
                         <li><%= link_to "Routes", routes_path %></li>
                         <li role="separator" class="divider"></li>
                         <li><%= link_to "All Cliffs", cliffs_path %></li>
@@ -26,8 +28,10 @@
                         <% end %>
                    </ul>
                 </li>
+                <li><%= link_to "Deo Tibba Expedition", tibba_path  %></li>
             <% if logged_in? %>
                 <li><%= link_to "Offroading", pages_offroading_path  %></li>
+                <li><%= link_to "Family", pages_family_path %></li>
                 <li><%= link_to "Public Files", resumes_path  %></li>
                 <li><%= link_to "Users", users_path %></li>
                 

@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
     before_action :set_route, only: [:show, :edit, :update, :destroy]
-    before_action :require_user, only: [:destroy]
+    before_action :require_user, only: [:destroy, :create, :new]
     
   # GET /routes
   # GET /routes.json
