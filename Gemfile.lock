@@ -326,10 +326,10 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
-  bootstrap-sass (~> 3.3.5)
+  bootstrap-sass (~> 3.3.7)
   bootstrap-will_paginate (= 0.0.10)
   carrierwave
-  coffee-rails (~> 4.1.0)
+  coffee-rails
   fog
   jbuilder (~> 2.0)
   jquery-rails
